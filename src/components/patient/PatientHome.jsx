@@ -86,7 +86,7 @@ const PatientHome = () => {
     const [currNoteID, setCurrNoteID] = useState(-1);
     const [currNoteDesc, setCurrNoteDesc] = useState('');
 
-    const { setErrorMessage, setErrorVisible } = useContext(AppContext);
+    const { setErrorMessage, currUser, setErrorVisible } = useContext(AppContext);
 
     const { patientID } = useParams();
     const navigate = useNavigate();
@@ -336,9 +336,11 @@ const PatientHome = () => {
                     <TopDetailsContent>
                         <NameContainer>
                             <PatientName>{getName(patient)}</PatientName>
-                            <IconButton onClick={() => handleOpenDialog('editAccount')}>
-                                <Edit />
-                            </IconButton>
+                            {currUser.role === 'admin' && (
+                                <IconButton onClick={() => handleOpenDialog('editAccount')}>
+                                    <Edit />
+                                </IconButton>
+                            )}
                         </NameContainer>
                         <Box>
                             {device ? (

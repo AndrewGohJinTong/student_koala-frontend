@@ -44,7 +44,7 @@ const Patient = () => {
                     Thresholds
                 </SidebarButton>
             </SidebarContainer>
-            <Box marginLeft="200px"> {/* Adjust layout as necessary */}
+            <Box marginLeft="200px"> 
                 {activeTab === 'overview' ? (
                     <PatientHome />
                 ) : (

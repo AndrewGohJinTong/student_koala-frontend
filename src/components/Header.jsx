@@ -79,7 +79,6 @@ const Header = () => {
         setToken('');
         instance.logoutRedirect();
     };
-    // console.log(currUser)
     // TODO: FIX UP HARDCODING OF CURRUSER
 
     return (
